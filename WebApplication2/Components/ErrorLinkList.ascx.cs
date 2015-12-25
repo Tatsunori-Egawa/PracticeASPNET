@@ -55,7 +55,13 @@ namespace WebApplication2.Components {
         /// <param name="isError">エラー扱いの場合true、警告扱いの場合false</param>
         public void Add(string message, string Id, string clientId, bool isError = true) {
             string s = string.IsNullOrEmpty(clientId) ? message : @"<a href=""" + @"#" + clientId + @""">" + message + @"</a>";
-            (this.Page.FindControl(Id) as WebControl).CssClass = Utility.AddCssClass((this.Page.FindControl(Id) as WebControl).CssClass, "inputError");
+            WebControl c = null;
+            if (this.Page.Master == null)
+                c = this.Page.FindControl(Id) as WebControl;
+            else
+                c = this.Page.Master.FindControl(ConstantsValues.CONTENTPLACEHOLDER_BODY_ID).FindControl(Id) as WebControl;
+
+            if (c != null) c.CssClass = Utility.AddCssClass(c.CssClass, "inputError");
             if (isError)
                 this.errorList.Add(s);
             else
