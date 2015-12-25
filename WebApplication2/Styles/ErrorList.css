@@ -1,0 +1,38 @@
+﻿@charset 'UTF-8';
+ul.__ERRORLIST__,ul.__WARNINGLIST__{
+    line-height:1.2em;
+    padding:0.5em;
+    font-weight:bold;
+    margin-left:0;
+}
+ul.__ERRORLIST__{
+    border:double 3px #FF0000;
+}
+ul.__WARNINGLIST__{
+    border:double 3px #0000FF;
+}
+
+ul.__ERRORLIST__ > li,ul.__WARNINGLIST__ > li{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+ul.__ERRORLIST__ > li{
+    color:#FF0000;
+}
+ul.__WARNINGLIST__ > li{
+    color:#0000FF;
+}
+
+ul.__ERRORLIST__ li a:link,ul.__ERRORLIST__ li a:visited{
+    color:#FF0000;
+}
+ul.__WARNINGLIST__ li a:link,ul.__WARNINGLIST__ li a:visited{
+    color:#0000FF;
+}
+ul.__ERRORLIST__ li a:hover{
+    color:#ff6a00;
+}
+ul.__WARNINGLIST__ li a:hover{
+    color:#ff6a00;
+}

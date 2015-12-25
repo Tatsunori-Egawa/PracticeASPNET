@@ -1,0 +1,11 @@
+﻿@charset 'UTF-8';
+body {
+}
+
+.hidden{
+    display:none !important;
+}
+
+.inputError{
+    background-color:#FF0000;
+}
